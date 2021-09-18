@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Score Keeper</title>
+    
+</head>
+<body>
+    <div>
+        <h1>Score Keeper</h1>
+
+        <section class="forms">
+            <h2>Score <input id="WinningScore" type="number" placeholder="Select Number" min="1" max="50"> to win!</h2>
+
+            <form id="numberofteams">
+                <label for="Number of Teams">How Many Teams?</label>
+                <input type="number" placeholder="Select Number" min="1" max="50">
+                <button>Submit</button>
+            </form>
+
+            <form id="teamnames" action="">
+                <label for="Team 1">Team 1:</label>
+                <input type="text" name="Team 1's Name" placeholder="Team 1">
+            </form>
+        </section>
+        
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+<!-- //Title page  with choose # of teams, 
+    forms to fill out team names, 
+//need a score of _ to win (drop down number selector)
+submit button
+
+// team name with current score 
+counter up button
+counter down button
+
+first team to get to end score wins

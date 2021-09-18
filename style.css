@@ -1,0 +1,23 @@
+body {
+    
+    display: flex;
+    justify-content: center;
+    background-image: url("Tesselation-Transition.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+
+h2 {
+font-size: 30px;
+}
+
+
+
+input {
+    border-radius: 50px;
+    text-align: center;
+    font-size: 27px;
+    width: 160px;
+    height: 30px;
+}
