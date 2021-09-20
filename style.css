@@ -1,23 +1,59 @@
 body {
-    
-    display: flex;
-    justify-content: center;
-    background-image: url("Tesselation-Transition.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-image: url("Tesselation-Transition.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+div {
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: "Permanent Marker", cursive;
+}
 
 h2 {
-font-size: 30px;
+  font-size: 30px;
+  margin-bottom: 10px;
+  margin-top: 60px;
+  font-family: "Permanent Marker", cursive;
 }
 
-
+h2 img {
+  height: 25px;
+}
 
 input {
-    border-radius: 50px;
-    text-align: center;
-    font-size: 27px;
-    width: 160px;
-    height: 30px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 20px;
+  width: 160px;
+  height: 30px;
+}
+
+button {
+  margin: 10px;
+  border-radius: 50px;
+  width: 160px;
+  height: 30px;
+  font-size: 20px;
+  background-color: rgb(188, 185, 221);
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(85%);
+}
+
+button:active {
+  box-shadow: 0 5px #666;
+  position: relative;
+  transform: translateY(4px);
 }

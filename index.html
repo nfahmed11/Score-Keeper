@@ -5,31 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <title>Score Keeper</title>
     
 </head>
 <body>
     <div>
-        <h1>Score Keeper</h1>
+        <h1 class="animate__animated animate__rubberBand">Score Keeper</h1>
 
         <section class="forms">
-            <h2>Score <input id="WinningScore" type="number" placeholder="Select Number" min="1" max="50"> to win!</h2>
+            <h2>Score needed to win <img src="noun_tally_2098704.png" alt=""></h2> 
+            <input id="WinningScore" type="number" placeholder="Select Number" min="1" max="50">
 
-            <form id="numberofteams">
-                <label for="Number of Teams">How Many Teams?</label>
-                <input type="number" placeholder="Select Number" min="1" max="50">
-                <button>Submit</button>
-            </form>
+            <h2>Number of Teams  <i class="fas fa-user-plus"></i></h2>
+            <input id="Numofteams" type="number" placeholder="Select Number" min="2" max="50">
 
+            <h2 id = "teamname"> <i class="fas fa-list-ol"></i></h2>
             <form id="teamnames" action="">
-                <label for="Team 1">Team 1:</label>
                 <input type="text" name="Team 1's Name" placeholder="Team 1">
             </form>
+            
+            <button>Submit</button>
         </section>
         
 
+
     </div>
 
+    <script src="https://kit.fontawesome.com/79d14eaaf7.js" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
 </html>
