@@ -25,6 +25,21 @@ h2 {
   font-family: "Permanent Marker", cursive;
 }
 
+#listtitle {
+  display: none;
+  margin-top: 60px;
+  padding-right: 10px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.lists {
+  display: flex;
+  flex-direction: column;
+}
+
 h2 img {
   height: 25px;
 }
@@ -46,6 +61,10 @@ button {
   background-color: rgb(188, 185, 221);
   box-shadow: 0 9px #999;
   cursor: pointer;
+  position: relative;
+  transform: translate(83px, 10px);
+  justify-content: center;
+  display: none;
 }
 
 button:hover {
@@ -56,4 +75,5 @@ button:active {
   box-shadow: 0 5px #666;
   position: relative;
   transform: translateY(4px);
+  transform: translate(76px, 12px);
 }
