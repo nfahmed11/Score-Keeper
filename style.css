@@ -4,11 +4,11 @@ body {
   text-align: center;
   align-items: center;
   background-image: url("Tesselation-Transition.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100vw 100vh;
+  background-repeat: repeat-y;
 }
 
-div {
+#info {
   justify-content: center;
   align-items: center;
 }
@@ -25,19 +25,18 @@ h2 {
   font-family: "Permanent Marker", cursive;
 }
 
+#teams {
+  display: none;
+}
+
 #listtitle {
   display: none;
   margin-top: 60px;
-  padding-right: 10px;
   flex-wrap: nowrap;
   flex-direction: row;
   align-content: center;
   justify-content: center;
   align-items: center;
-}
-.lists {
-  display: flex;
-  flex-direction: column;
 }
 
 h2 img {
@@ -50,21 +49,29 @@ input {
   font-size: 20px;
   width: 160px;
   height: 30px;
+  margin-bottom: 10px;
 }
 
 button {
-  margin: 10px;
+  margin: auto;
   border-radius: 50px;
   width: 160px;
-  height: 30px;
+  height: 47px;
   font-size: 20px;
-  background-color: rgb(188, 185, 221);
-  box-shadow: 0 9px #999;
+  color: #d7e8fa;
+  background-color: rgb(110 163 197);
+  box-shadow: 0 8px #213441;
   cursor: pointer;
   position: relative;
-  transform: translate(83px, 10px);
-  justify-content: center;
   display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  border: solid 2px #6ea3c5;
+}
+
+#submit {
+  cursor: not-allowed;
 }
 
 button:hover {
@@ -72,8 +79,57 @@ button:hover {
 }
 
 button:active {
-  box-shadow: 0 5px #666;
+  box-shadow: 0 5px #040607;
   position: relative;
   transform: translateY(4px);
-  transform: translate(76px, 12px);
+}
+
+/* new page */
+div#pointspage {
+  display: none;
+  /* display: flex; */
+}
+
+input {
+  background-color: rgb(135 184 206 / 54%);
+  border: solid 2px #6ea3c5;
+  height: 43px;
+}
+
+input,
+select,
+textarea {
+  color: #d7e8fa;
+}
+
+div#teambox {
+  margin: 70px 70px 0px 70px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container {
+  padding-bottom: 68px;
+}
+
+.container2 {
+  margin-top: 10px;
+  border: 2px solid purple;
+}
+
+.increase {
+  background-color: #aad27cd4;
+  width: 122px;
+}
+
+.decrease {
+  background-color: #ca2e48d4;
+  width: 122px;
+}
+
+div#refreshButtons {
+  margin-top: 56px;
+  display: flex;
+  justify-content: center;
 }

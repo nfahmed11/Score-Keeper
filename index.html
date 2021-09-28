@@ -16,22 +16,49 @@
     
 </head>
 <body>
-    <div class="boxinbody">
+    <div id="info">
         <h1 class="animate__animated animate__rubberBand">Score Keeper</h1>
 
         <section class="forms">
-            <h2>Score needed to win <img src="noun_tally_2098704.png" alt=""></h2> 
-            <input id="WinningScore" type="number" placeholder="Select Number" min="1" max="50">
-
-            <h2>Number of Teams  <i class="fas fa-user-plus"></i></h2>
-            <input id="Numofteams" type="number" placeholder="Select Number" min="2" max="50">
-
-            <h2 id = "listtitle">Team Names<i class="fas fa-list-ol"></i></h2>
-            <div id = "list">
+            <div id="score">
+                <h2>Score needed to win <img src="noun_tally_2098704.png" alt=""></h2> 
+                <input id="WinningScore" type="number" placeholder="Select Number" min="1" max="50">
             </div>
-            <button>Submit</button>
+            
+            <div id="teams">
+                <h2>Number of Teams  <i class="fas fa-user-plus"></i></h2>
+                <input id="Numofteams" type="number" placeholder="Select Number" min="2" max="50">
+            </div>
+            
+            <div id="teamnames">
+                <h2 id = "listtitle">Team Names<i class="fas fa-list-ol"></i></h2>
+
+                <div id = "list">
+                </div>
+                <button id="submit" disabled>Submit</button>
+            </div>
+        </section>
+    </div>   
+
+    <div id="pointspage">
+        <section id="pointssection">
+            <div id="teambox">
+                
+            </div>
+            
+            <div id="refreshButtons">
+                <!--  restart game -->
+            <button id="newgame">Restart Game</button>
+            <!-- back to beginning -->
+            <button id="startover">Create New Teams</button>
+            </div>
+           
         </section>
     </div>
+    
+
+   
+
 
     <script src="https://kit.fontawesome.com/79d14eaaf7.js" crossorigin="anonymous"></script>
     <script src="app.js"></script>

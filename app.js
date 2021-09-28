@@ -1,38 +1,118 @@
-const teamNames = document.querySelector("#teamnames");
-const button = document.querySelector("button");
-const numberofteams = document.querySelector("#Numofteams");
+const submit = document.querySelector("#submit");
 const listtitle = document.querySelector("#listtitle");
 const list = document.querySelector("#list");
+const info = document.querySelector("#info");
+const score = document.querySelector("#score");
+const teams = document.querySelector("#teams");
+const winningscore = document.querySelector("#WinningScore");
+const numberofteams = document.querySelector("#Numofteams");
+let values = [];
 
-//listen for user input for number of teams and use input to show team name and submit button
+// second page
+const pointspage = document.querySelector("#pointspage");
+const teambox = document.querySelector("#teambox");
+const newgame = document.querySelector("#newgame");
+const createNewTeams = document.querySelector("#startover");
+
+// hide everything below first input
+score.addEventListener("input", function () {
+  teams.style.display = "block";
+});
+
 numberofteams.addEventListener("input", function () {
-  //remove everything prevoiusly loaded first
   list.innerHTML = "";
-
-  //get user input value
-  const userinputofnumofteam = numberofteams.value;
-  console.log(userinputofnumofteam);
+  const numofteams = numberofteams.value;
   listtitle.style.display = "flex";
-  button.style.display = "flex";
+  submit.style.display = "flex";
 
-  //create team name input form
-  for (let i = 0; i < userinputofnumofteam; i++) {
-    // create new form according to user input
-    const newForm = document.createElement("input");
-    newForm.setAttribute("type", "text");
-    newForm.setAttribute("id", "form" + i);
-    newForm.setAttribute("placeholder", `Team ${i + 1}`);
+  for (let i = 0; i < numofteams; i++) {
+    // create new form
+    const newInput = document.createElement("input");
+    newInput.setAttribute("type", "text");
+    newInput.setAttribute("id", "form" + i);
+    newInput.setAttribute("class", "names");
+    newInput.setAttribute("placeholder", `Team ${i + 1}`);
 
-    //push/append input form to html
-    list.appendChild(newForm);
+    //push form to html
+    list.appendChild(newInput);
     list.appendChild(document.createElement("br"));
   }
 });
 
-// submit button - collect user input on team names
-//make a button for each team that increases/decreases points
-button.addEventListener("click", function (e) {
-  e.preventDefault();
+// listen for all form inputs being filled out
+document.addEventListener("input", function (e) {
+  if (e.target.className === "names") {
+    let allAreFilled = false;
+    let namesArray = document.querySelectorAll(".names");
+
+    namesArray.forEach((item) => {
+      if (item.value != "") {
+        allAreFilled = true;
+      } else {
+        allAreFilled = false;
+      }
+    });
+
+    if (allAreFilled === true) {
+      submit.removeAttribute("disabled");
+      submit.style.cursor = "pointer";
+    }
+  }
 });
 
-// track points to see who wins (if else statement boolean?)
+//listen for submit button being clicked
+submit.addEventListener("click", () => {
+  //team names in an array:
+  values = [];
+  let namesArray = document.querySelectorAll(".names");
+
+  namesArray.forEach((item) => {
+    const nameVal = item.value;
+    values.push(nameVal);
+    item.value = "";
+
+    // create div box with names
+    const container = document.createElement("div");
+    container.setAttribute("class", "container");
+
+    const container2 = document.createElement("div");
+    container2.setAttribute("class", "container2");
+
+    const newDiv = document.createElement("div");
+    const teamsscore = document.createElement("div");
+    const increase = document.createElement("button");
+    const decrease = document.createElement("button");
+
+    newDiv.setAttribute("class", "teamDiv");
+    newDiv.setAttribute("id", `${nameVal}`);
+    newDiv.innerHTML = nameVal;
+
+    teamsscore.innerHTML = "0";
+    teamsscore.setAttribute("id", `${nameVal} score`);
+    teamsscore.style.display = "flex";
+
+    increase.innerHTML = " + 1 ";
+    increase.setAttribute("class", "increase");
+    increase.style.display = "flex";
+
+    decrease.innerHTML = " - 1 ";
+    decrease.setAttribute("class", "decrease");
+    decrease.style.display = "flex";
+
+    teambox.appendChild(container);
+
+    container.appendChild(increase);
+    container.appendChild(container2);
+    container2.appendChild(newDiv);
+    container2.appendChild(teamsscore);
+    container.appendChild(decrease);
+
+    // show next page and hide previos page
+    info.style.display = "none";
+    pointspage.style.display = "flex";
+    newgame.style.display = "flex";
+    createNewTeams.style.display = "flex";
+  });
+
+  console.log(values);
+});
