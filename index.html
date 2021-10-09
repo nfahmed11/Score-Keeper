@@ -20,7 +20,7 @@
         <h1 class="animate__animated animate__rubberBand">Score Keeper</h1>
 
         <section class="forms">
-            <div id="score">
+            <div id="scoretowin">
                 <h2>Score needed to win <img src="noun_tally_2098704.png" alt=""></h2> 
                 <input id="WinningScore" type="number" placeholder="Select Number" min="1" max="50">
             </div>
@@ -29,6 +29,7 @@
                 <h2>Number of Teams  <i class="fas fa-user-plus"></i></h2>
                 <input id="Numofteams" type="number" placeholder="Select Number" min="2" max="50">
             </div>
+            
             
             <div id="teamnames">
                 <h2 id = "listtitle">Team Names<i class="fas fa-list-ol"></i></h2>
@@ -41,19 +42,16 @@
     </div>   
 
     <div id="pointspage">
-        <section id="pointssection">
-            <div id="teambox">
-                
-            </div>
-            
+            <div id="teambox"></div>
             <div id="refreshButtons">
                 <!--  restart game -->
-            <button id="newgame">Restart Game</button>
-            <!-- back to beginning -->
-            <button id="startover">Create New Teams</button>
-            </div>
-           
-        </section>
+                <button id="newgame">Restart Game</button>
+                
+                <!-- back to beginning -->
+                
+                <button id="startover">Create New Teams</button>
+            
+        
     </div>
     
 

@@ -87,7 +87,7 @@ button:active {
 /* new page */
 div#pointspage {
   display: none;
-  /* display: flex; */
+  flex-direction: column;
 }
 
 input {
@@ -110,26 +110,37 @@ div#teambox {
 }
 
 .container {
-  padding-bottom: 68px;
-}
-
-.container2 {
+  margin: 41px 20px;
   margin-top: 10px;
-  border: 2px solid purple;
+  border: 2px solid #94b2d6;
+  border-radius: 20px;
+  background-color: #85c2cdb3;
 }
 
 .increase {
   background-color: #aad27cd4;
+  box-shadow: 0 8px #435439;
+  border: solid 2px #bbcbb2;
   width: 122px;
+  display: flex;
 }
 
 .decrease {
   background-color: #ca2e48d4;
+  box-shadow: 0 8px #490d1b;
+  border: solid 2px #b48c94;
   width: 122px;
+  display: flex;
 }
 
 div#refreshButtons {
   margin-top: 56px;
   display: flex;
   justify-content: center;
+}
+
+#newgame,
+#startover {
+  display: flex;
+  margin: 0 8%;
 }
