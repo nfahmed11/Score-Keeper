@@ -5,6 +5,7 @@ const list = document.querySelector("#list");
 const info = document.querySelector("#info");
 const teams = document.querySelector("#teams");
 const scoretowin = document.querySelector("#WinningScore");
+let scoreToWinValue;
 const numberofteams = document.querySelector("#Numofteams");
 let values = [];
 
@@ -13,13 +14,14 @@ const pointspage = document.querySelector("#pointspage");
 const teambox = document.querySelector("#teambox");
 const newgame = document.querySelector("#newgame");
 const createNewTeams = document.querySelector("#startover");
+let winner = document.querySelector("#winner");
 let container = [];
 let playersScore = [];
 
 // hide everything below first input
 scoretowin.addEventListener("input", function () {
-  let scoreValue = scoretowin.value;
-  console.log(`Winning score is set to ${scoreValue}`);
+  scoreToWinValue = scoretowin.value;
+  console.log(`Winning score is set to ${scoreToWinValue}`);
   teams.style.display = "block";
 });
 
@@ -73,10 +75,12 @@ submit.addEventListener("click", () => {
 
   //use user input for team names and send each input into the empty array
   namesArray.forEach((item) => {
-    const nameVal = item.value;
+    const nameVal = item.value.toUpperCase();
     values.push(nameVal);
   });
 
+  let removeDuplicates = [...new Set(values)];
+  values = removeDuplicates;
   console.log(`Team names are ${values}`);
 
   container = [];
@@ -117,7 +121,6 @@ function handleClick(event) {
   if (pathID.includes("Increase")) {
     console.log("has increase");
     let changeScore = pathID.replace("Increase", "Score");
-    console.log(changeScore);
   }
 
   if (pathID.includes("Decrease")) {
@@ -126,29 +129,46 @@ function handleClick(event) {
     console.log(changeScore);
   }
 
-  let editScore = document.querySelector(`${changeScore}`);
-  console.log(editScore);
-
   //loop through playerscore object arrray, and for each one find the name value and see if it matches the variable for button click
-
   playersScore.forEach((item) => {
     if (item.name + "Increase" === pathID) {
-      console.log("matched");
       item.score += 1;
       console.log(`${item.name} score is ${item.score}`);
 
       let selectH2 = document.querySelector(`#${item.name}Score`);
       selectH2.innerHTML = item.score;
+
+      // if current score === winningscore - write who wins
+      if (item.score == scoreToWinValue) {
+        console.log(`${item.name} wins`);
+        teambox.style.display = "none";
+        winner.style.display = "flex";
+        winner.innerHTML = `<h2 class="animate__animated animate__heartBeat";>GAME OVER </h2></br> <h2 class="animate__animated animate__heartBeat";>${item.name} WINS!!!!!</h2>`;
+
+        newgame.addEventListener("click", function () {
+          teambox.style.display = "flex";
+          winner.style.display = "none";
+        });
+      }
     }
 
     if (item.name + "Decrease" === pathID) {
       console.log("matched");
       item.score -= 1;
       console.log(`${item.name} score is ${item.score}`);
+
       let selectH2 = document.querySelector(`#${item.name}Score`);
       selectH2.innerHTML = item.score;
     }
   });
-}
 
+  //reset scores button
+  newgame.addEventListener("click", function () {
+    playersScore.forEach((item) => {
+      item.score = 0;
+      let selectH2 = document.querySelector(`#${item.name}Score`);
+      selectH2.innerHTML = item.score;
+    });
+  });
+}
 console.log("bottom");

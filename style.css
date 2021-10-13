@@ -1,4 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
 body {
+  font-family: "Righteous", cursive;
+  text-shadow: 2px 2px #8dc5ce;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -14,15 +18,14 @@ body {
 }
 
 h1 {
-  font-size: 50px;
-  font-family: "Permanent Marker", cursive;
+  font-size: 4rem;
+  margin-bottom: 0;
 }
 
 h2 {
   font-size: 30px;
   margin-bottom: 10px;
-  margin-top: 60px;
-  font-family: "Permanent Marker", cursive;
+  margin-top: 30px;
 }
 
 #teams {
@@ -31,7 +34,6 @@ h2 {
 
 #listtitle {
   display: none;
-  margin-top: 60px;
   flex-wrap: nowrap;
   flex-direction: row;
   align-content: center;
@@ -44,12 +46,17 @@ h2 img {
 }
 
 input {
+  font-family: "Righteous", cursive;
   border-radius: 50px;
   text-align: center;
   font-size: 20px;
   width: 160px;
   height: 30px;
   margin-bottom: 10px;
+}
+
+h3 {
+  color: #d7e8fa;
 }
 
 button {
@@ -103,7 +110,7 @@ textarea {
 }
 
 div#teambox {
-  margin: 70px 70px 0px 70px;
+  margin: 20px 70px 0px 70px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -115,13 +122,19 @@ div#teambox {
   border: 2px solid #94b2d6;
   border-radius: 20px;
   background-color: #85c2cdb3;
+  width: 164px;
+  height: 205px;
+}
+
+button {
+  font-family: "Righteous", cursive;
 }
 
 .increase {
   background-color: #aad27cd4;
   box-shadow: 0 8px #435439;
   border: solid 2px #bbcbb2;
-  width: 122px;
+  width: 149px;
   display: flex;
 }
 
@@ -129,12 +142,13 @@ div#teambox {
   background-color: #ca2e48d4;
   box-shadow: 0 8px #490d1b;
   border: solid 2px #b48c94;
-  width: 122px;
+  width: 149px;
   display: flex;
 }
 
 div#refreshButtons {
-  margin-top: 56px;
+  margin-top: 20px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
 }
@@ -142,5 +156,32 @@ div#refreshButtons {
 #newgame,
 #startover {
   display: flex;
-  margin: 0 8%;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+#winner {
+  flex-direction: column;
+  margin: 70px;
+  font-size: 51px;
+}
+
+.animate__heartBeat {
+  color: #224b54;
+  text-shadow: 5px 0px #8dc5ce;
+  margin-top: 15px;
+}
+
+/* responsive design */
+
+@media (max-width: 399px) {
+  h1 {
+    font-size: clamp(3rem, 4rem + -3.3333vw, 4rem);
+  }
+}
+
+@media (max-width: 490px) {
+  div#teambox {
+    display: flex;
+  }
 }

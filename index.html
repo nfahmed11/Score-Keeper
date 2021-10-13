@@ -9,9 +9,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  
     <title>Score Keeper</title>
     
 </head>
@@ -21,7 +19,7 @@
 
         <section class="forms">
             <div id="scoretowin">
-                <h2>Score needed to win <img src="noun_tally_2098704.png" alt=""></h2> 
+                <h2>Score To Win <img src="noun_tally_2098704.png" alt=""></h2> 
                 <input id="WinningScore" type="number" placeholder="Select Number" min="1" max="50">
             </div>
             
@@ -42,14 +40,18 @@
     </div>   
 
     <div id="pointspage">
+        <div id="title"> <h1>Ready, Set, Play!</h1></div>
             <div id="teambox"></div>
+            <div id="winner" style="display: none;"> 
+            
+            </div>
             <div id="refreshButtons">
                 <!--  restart game -->
                 <button id="newgame">Restart Game</button>
                 
                 <!-- back to beginning -->
                 
-                <button id="startover">Create New Teams</button>
+                <button id="startover" onclick="document.location.reload()">Create New Teams</button>
             
         
     </div>
